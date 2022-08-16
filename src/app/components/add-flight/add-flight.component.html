@@ -1,0 +1,80 @@
+<h1>Add Flight</h1>
+<form (submit)="onSubmit()"[formGroup]="addForm" class="form">
+    <label> Enter Destination: </label>
+    <input type="text" name="destination" formControlName="destination">
+    <span *ngIf="addForm.controls['name'].invalid
+        && addForm.controls['name'].touched">
+    <span *ngIf="addForm.controls['name'].errors['required']"> Name is Required</span>
+    <span *ngIf="addForm.controls['name'].errors['pattern']"> Pattern allowed: [a-zA-Z ]+</span>
+  </span>
+  <br /><br />
+    <label> Enter Source: </label>
+    <input type="text" name="source" formControlName="source">
+    <span *ngIf="addForm.controls['name'].invalid
+    && addForm.controls['name'].touched">
+<span *ngIf="addForm.controls['name'].errors['required']"> Name is Required</span>
+<span *ngIf="addForm.controls['name'].errors['pattern']"> Pattern allowed: [a-zA-Z ]+</span>
+</span>
+<br /><br />
+    <label> Enter Adult Fare: </label>
+    <input type="text" name="adult_fare" formControlName="adult_fare">
+    <span *ngIf="addForm.controls['adult_fare'].invalid
+  && addForm.controls['adult_fare'].touched">
+    <span *ngIf="addForm.controls['adult_fare'].errors['required']"> _fare is Required</span>
+    <span *ngIf="addForm.controls['adult_fare'].errors['minlength']"> Minlength is 4</span>
+    <span *ngIf="addForm.controls['adult_fare'].errors['maxlength']"> Max Length is 10</span>
+    <span *ngIf="addForm.controls['adult_fare'].errors['pattern']"> Pattern allowed: [0-9 ]+</span>
+  </span>
+  <br /><br />
+    <label> Enter Child Fare: </label>
+    <input type="text" name="child_fare" formControlName="child_fare">
+    <span *ngIf="addForm.controls['child_fare'].invalid
+    && addForm.controls['child_fare'].touched">
+      <span *ngIf="addForm.controls['child_fare'].errors['required']"> _fare is Required</span>
+      <span *ngIf="addForm.controls['child_fare'].errors['minlength']"> Minlength is 4</span>
+      <span *ngIf="addForm.controls['child_fare'].errors['maxlength']"> Max Length is 10</span>
+      <span *ngIf="addForm.controls['child_fare'].errors['pattern']"> Pattern allowed: [0-9 ]+</span>
+    </span>
+    <br /><br />
+    <label>Select departure date</label>
+    <input type="date" name="departure_date" [(ngModel)]="departure_date">
+
+    <label>Select arrival date</label>
+    <input type="date" name="departure_date" [(ngModel)]="departure_date">
+
+    <label> Enter departure time: </label>
+    <input type="text" name="destination" formControlName="destination">
+    <span *ngIf="addForm.controls['name'].invalid
+        && addForm.controls['name'].touched">
+    <span *ngIf="addForm.controls['name'].errors['required']"> Name is Required</span>
+    <span *ngIf="addForm.controls['name'].errors['pattern']"> Pattern allowed: [a-zA-Z ]+</span>
+  </span>
+  <br /><br />
+    <label> Enter arrival time: </label>
+    <input type="text" name="arrival_time" formControlName="arrival_time">
+    <span *ngIf="addForm.controls['name'].invalid
+    && addForm.controls['name'].touched">
+<span *ngIf="addForm.controls['name'].errors['required']"> Name is Required</span>
+<span *ngIf="addForm.controls['name'].errors['pattern']"> Pattern allowed: [a-zA-Z ]+</span>
+</span>
+<br /><br />
+    <label> Enter flight duration: </label>
+    <input type="text" name="duration" formControlName="duration">
+    <span *ngIf="addForm.controls['name'].invalid
+        && addForm.controls['name'].touched">
+    <span *ngIf="addForm.controls['name'].errors['required']"> Name is Required</span>
+    <span *ngIf="addForm.controls['name'].errors['pattern']"> Pattern allowed: [a-zA-Z ]+</span>
+  </span>
+  <br /><br />
+    <label> Enter number of seats: </label>
+    <input type="text" name="seats" formControlName="seats">
+    <span *ngIf="addForm.controls['_fare'].invalid
+  && addForm.controls['_fare'].touched">
+    <span *ngIf="addForm.controls['_fare'].errors['required']"> _fare is Required</span>
+    <span *ngIf="addForm.controls['_fare'].errors['minlength']"> Minlength is 4</span>
+    <span *ngIf="addForm.controls['_fare'].errors['maxlength']"> Max Length is 10</span>
+    <span *ngIf="addForm.controls['_fare'].errors['pattern']"> Pattern allowed: [0-9 ]+</span>
+  </span>
+  <br /><br />
+  <input type="submit" value="Add Flight" [disabled]="!addForm.valid">
+</form>

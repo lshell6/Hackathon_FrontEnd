@@ -1,0 +1,15 @@
+<ol>
+    <li *ngFor="let f of flights">
+      Vendor: American Airlines  &nbsp;&nbsp;&nbsp;
+      Source: {{f.source}}  &nbsp;&nbsp;&nbsp;
+      Desintaiton: {{f.destination}} &nbsp;&nbsp;&nbsp;
+      Departure Day: {{f.departure_date}}  &nbsp;&nbsp;&nbsp;
+      Departure Time: {{f.departure_time}}  &nbsp;&nbsp;&nbsp;
+      Source: {{f.source}}  &nbsp;&nbsp;&nbsp;
+      Duration: {{f.duration}}  &nbsp;&nbsp;&nbsp;
+      Arrival Day: {{f.arrival_date}}  &nbsp;&nbsp;&nbsp;
+      Arrival Time: {{f.arrival_time}}  &nbsp;&nbsp;&nbsp;
+      <a href="javascript::void" (click)="onSelect(f.id)">
+        Book</a>
+    </li>
+  </ol>

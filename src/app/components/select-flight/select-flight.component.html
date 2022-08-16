@@ -1,0 +1,28 @@
+<h1>Book Flight</h1>
+<h3>Confirmation</h3>
+<div>
+    <p>{{vendor.name}}</p>
+    <div>
+        <label for="FROM"></label>{{flight.source}} &nbsp; {{departure_time}} &nbsp; {{departure_date}}
+        <br>
+        <label for="TO"></label>{{flight.destination}} &nbsp; {{arrival_time}} &nbsp; {{arrival_date}}
+    </div>
+    <div>
+        <label>Fare: </label>&nbsp;{{adult_fare}} /Adult &nbsp; {{child_fare}} /child
+        <select [(ngModel)]=numAdults>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+        <select [(ngModel)]=numChildren>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+    </div>
+    <div>
+        <Label>Total Fare: </Label> {{totalFare}}
+    </div>
+</div>
